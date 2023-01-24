@@ -7,7 +7,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const server= express();
 const port = 8080;
-
+require('dotenv').config();
 //MIDDLEWARES
 server.use(morgan('dev'));
 server.use(cors());
@@ -21,7 +21,9 @@ const RecipeRouter=require('./routes/recipes');
 mongoose.set('strictQuery',false)
 
 //DATABASE CONNECTION
-mongoose.connect('mongodb://localhost:27017/recipemomdb');
+mongoose.connect(process.env.MONGO_URL,{
+    useNewUrlParser: true, useUnifiedTopology: true,
+})
 
 server.get('/',(request,response)=>{
     response.send('welcome to recipe API')
@@ -30,6 +32,10 @@ server.get('/',(request,response)=>{
 //ENDPOINTS
 server.use('/api/recipes/v2',RecipeRouter)
 
-server.listen(port,()=>{
-    console.log(`server running on port ${port}`)
+// server.listen(port,()=>{
+//     console.log(`server running on port ${port}`)
+// })
+
+server.listen(process.env.PORT, () => {
+    console.log(`Server running on port ${ process.env.PORT }`);
 })

@@ -1,11 +1,11 @@
 //COMPONENTS
-import FetchRecipes from '../components/FetchRecipes.js';
+import APIFetchRecipes from '../components/APIFetchRecipes.js';
 
 const HomePage =()=>{
     return(
         <>
             This HomePage
-            <FetchRecipes/>
+            <APIFetchRecipes/>
         </>
     )
 }

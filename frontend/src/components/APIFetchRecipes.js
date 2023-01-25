@@ -8,7 +8,8 @@ const APIFetchRecipes =()=>{
     //FETCHING OF DATA
     const fetchData = () => {
         // return fetch("https://jsonplaceholder.typicode.com/users")
-        return fetch("https://pokeapi.co/api/v2/pokemon/")
+        // return fetch("https://pokeapi.co/api/v2/pokemon/")
+        return fetch("https://api.edamam.com/api/recipes/v2")
             .then((response) => response.json())
             .then((data) => setUser(data));
     }

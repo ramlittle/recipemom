@@ -1,37 +1,38 @@
-//DEPENDECIES
 import React, { useEffect, useState } from "react";
+
 
 const APIFetchRecipes =()=>{
 
+    const api={
+      url:'https://api.spoonacular.com/recipes/complexSearch',
+      key: 'f87d385d1036499abae16b0d624d4b69'
+    }
     const [user, setUser] = useState([]);
 
-    //FETCHING OF DATA
-    const fetchData = () => {
-        // return fetch("https://jsonplaceholder.typicode.com/users")
-        // return fetch("https://pokeapi.co/api/v2/pokemon/")
-        return fetch("https://api.edamam.com/api/recipes/v2")
-            .then((response) => response.json())
-            .then((data) => setUser(data));
+    const fetchData=()=>{
+        //I just read the documentation on how to fetch data on its website
+        fetch('https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=3265345c&app_key=7bfa7e02012d5b7fc29611c822c15802', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+          })
+          .then(res => res.json())
+          .then((data) => setUser(data));
     }
 
-    //DISPLAYING/RENDERING OF DATA after page loads
-    useEffect(() => {
-        fetchData();
-    },[])
+  useEffect(() => {
+    fetchData();
+  },[])
 
 
-    console.log('list of users',user)
-    console.log('array',user.results)
-    let pokemons = user.results;
+console.log(user.hits[0].recipe.uri)
+console.log(user.hits[0].recipe.label)
+console.log(user.hits[0].recipe.image)
+
     return(
         <>
-         <h1>User List</h1>
-            <ul>
-                {pokemons && pokemons.length > 0 && pokemons.map((userObj, index) => (
-                    <li key={userObj.id}>{userObj.name}</li>
-                ))}
-            </ul>
-
+          <h2>{user.hits[0].recipe.uri}</h2>
+          <small>{user.hits[0].recipe.label}</small>
+          <img src = {user.hits[0].recipe.image}/>
         </>
     )
 }

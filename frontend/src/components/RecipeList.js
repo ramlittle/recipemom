@@ -12,7 +12,7 @@ const RecipeList =(props)=>{
                 {
                     props.currentRecords.map(list => (
                         <>
-                            <div className ='img-container'>
+                            <div className ='recipe-container'>
                                 <img src = {list.image}/>
                                 <label>{list.label}</label>
                             </div>
@@ -20,28 +20,7 @@ const RecipeList =(props)=>{
                     ))
                 } 
             </div> 
-        </>
-    //     <table>
-    //     <thead>
-    //         <tr>
-    //             <th>ID</th>
-    //             <th>Label</th>
-    //             <th>Image</th>
-    //         </tr>
-    //     </thead>
-    //     <tbody>
-    //             {props.currentRecords.map(list => (
-    //                     <tr>
-    //                         <td>{list.uri}</td>
-    //                         <td>{list.label}</td>
-    //                         <td><img src={list.image}/></td>
-    //                       </tr>
-    //             ))
-    //           } 
-    //     </tbody>
-        
-    //   </table>
-     
+        </>  
     )
 }
 export default RecipeList;

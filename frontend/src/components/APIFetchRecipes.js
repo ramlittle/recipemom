@@ -8,6 +8,7 @@ const APIFetchRecipes =()=>{
   //FETCH DATA using axios
   const [data, setData] = useState([]);
   const [category,setCategory]=useState('chicken');
+  
   const fetchData = () => {
     return axios.get(`https://api.edamam.com/api/recipes/v2?type=public&q=${category}&app_id=3265345c&app_key=7bfa7e02012d5b7fc29611c822c15802`)
           .then((response) => {
@@ -55,23 +56,27 @@ const APIFetchRecipes =()=>{
         <div className='container'>
           <div>
             <form onSubmit = {onSearchHandler}>
-              <label htmlFor = 'category'>category: </label>
+              <label htmlFor = 'category'>Search: </label>
               <input 
                 value={category}
                 onChange={(e)=>setCategory(e.target.value)}
                 name='category'
               />
-              <button type ='submit'>Search</button>
+              <button type ='submit'>Submit</button>
             </form>
           </div>
+
           <Pagination
             nPages = { nPages }
             currentPage = { currentPage } 
             setCurrentPage = { setCurrentPage }
           />
+
+          <center><small>Retrieved <strong>{obtainedRecipes.length}</strong></small></center>
           <RecipeList 
             currentRecords={currentRecords}
           />
+
         </div>
     )
 }

@@ -5,11 +5,20 @@
     align-items:center;
     justify-content: center;
 }
-.img-container{
+.recipe-container{
     width: 30%;
     border:1px solid blue;
     display:flex;
     flex-direction:column;
     justify-content: center;
     align-items:center;
+}
+.recipe-container > img{
+    border-radius: 50%;
+}
+.recipe-container > img:hover{
+    border-radius: 0px;
+}
+.recipe-container > label{
+    font-weight:bold;
 }

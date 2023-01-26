@@ -32,50 +32,29 @@ const APIFetchRecipes =()=>{
   // User is currently on this page
   const [currentPage, setCurrentPage] = useState(1);
   // No of Records to be displayed on each page   
-  const [recordsPerPage] = useState(3);
+  const [recordsPerPage] = useState(2);
 
+  //indices of first and last record
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
 
   // Records to be displayed on the current page
-  const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
+  const currentRecords = obtainedRecipes.slice(indexOfFirstRecord, indexOfLastRecord);
   
   //Count of pages
   const nPages = Math.ceil(data.length / recordsPerPage)
   
   return(
-        <>
+        <div className='container'>
           <Pagination
             nPages = { nPages }
             currentPage = { currentPage } 
             setCurrentPage = { setCurrentPage }
           />
-          <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Label</th>
-                    <th>Image</th>
-                </tr>
-            </thead>
-            <tbody>
-                
-                  {
-                    obtainedRecipes.map(list=> {
-                      return <RecipeList
-                                key={list.uri}
-                                uri={list.uri}
-                                label={list.label}
-                                image={list.image}
-                              />
-                    })
-                  }
-                
-            </tbody>
-            
-          </table>
-         
-        </>
+          <RecipeList 
+            currentRecords={currentRecords}
+          />
+        </div>
     )
 }
 

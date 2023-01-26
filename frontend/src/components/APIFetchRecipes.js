@@ -7,8 +7,9 @@ import Pagination from './Pagination.js';
 const APIFetchRecipes =()=>{
   //FETCH DATA using axios
   const [data, setData] = useState([]);
+  const [category,setCategory]=useState('chicken');
   const fetchData = () => {
-    return axios.get("https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=3265345c&app_key=7bfa7e02012d5b7fc29611c822c15802")
+    return axios.get(`https://api.edamam.com/api/recipes/v2?type=public&q=${category}&app_id=3265345c&app_key=7bfa7e02012d5b7fc29611c822c15802`)
           .then((response) => {
             setData(response.data.hits)
           })
@@ -28,11 +29,17 @@ const APIFetchRecipes =()=>{
 
   console.log('data from APIFetch',obtainedRecipes)
   
+  //SEARCH CATEGORY
+  const onSearchHandler =(e)=>{
+    e.preventDefault();
+    //call the fetching of data again, after search is clicked
+    fetchData();
+  }
   //PAGINATION
   // User is currently on this page
   const [currentPage, setCurrentPage] = useState(1);
   // No of Records to be displayed on each page   
-  const [recordsPerPage] = useState(2);
+  const [recordsPerPage] = useState(3);
 
   //indices of first and last record
   const indexOfLastRecord = currentPage * recordsPerPage;
@@ -46,6 +53,17 @@ const APIFetchRecipes =()=>{
   
   return(
         <div className='container'>
+          <div>
+            <form onSubmit = {onSearchHandler}>
+              <label htmlFor = 'category'>category: </label>
+              <input 
+                value={category}
+                onChange={(e)=>setCategory(e.target.value)}
+                name='category'
+              />
+              <button type ='submit'>Search</button>
+            </form>
+          </div>
           <Pagination
             nPages = { nPages }
             currentPage = { currentPage } 

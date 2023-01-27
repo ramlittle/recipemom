@@ -61,6 +61,8 @@ const APIFetchRecipes =()=>{
                 value={category}
                 onChange={(e)=>setCategory(e.target.value)}
                 name='category'
+                placeholder='enter food here'
+                required
               />
               <button type ='submit'>Submit</button>
             </form>

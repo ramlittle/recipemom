@@ -1,0 +1,77 @@
+.viewed-recipe-container{
+    display:flex;
+    flex-direction:column;
+    margin:10px;
+}
+.head{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo-container{
+    height: 200px;
+    width:300px;
+}
+.head > div{
+    margin:10px;
+}
+
+/* colors */
+.color-green{
+    background-color: green;
+    color: white;
+    padding:5px;
+    border-radius: 5px;
+}
+.color-yellow{
+    background-color: yellow;
+    color: black;
+    padding:5px;
+    border-radius: 5px;
+}
+.color-violet{
+    background-color: violet;
+    color: white;
+    padding:5px;
+    border-radius: 5px;
+}
+.color-orange{
+    background-color: orange;
+    color: white;
+    padding:5px;
+    border-radius: 5px;
+}
+.color-goldenrod{
+    background-color: goldenrod;
+    color: white;
+    padding:5px;
+    border-radius: 5px;
+}
+.color-dodgerblue{
+    background-color: dodgerblue;
+    color: white;
+    padding:5px;
+    border-radius: 5px;
+}
+
+.body{
+    background-color: cornsilk;
+    padding:10px;
+    display:flex;
+    flex-direction:column;
+}
+.body > h3{
+    text-align:center;
+}
+.body h6{
+    font-size: large;
+    
+}
+/* INGREDIENTS */
+.ingredient-image{
+    border-radius:50%;
+    width: 100px;
+    height:100px;
+    margin-right:100px;
+    margin-left: 200px;
+}

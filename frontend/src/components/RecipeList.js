@@ -5,6 +5,8 @@ import {Link} from 'react-router-dom';
 //CSS
 import '../css/General.css';
 import '../css/RecipeList.css';
+
+
 const RecipeList =(props)=>{
     console.log('data from recipe list',props.currentRecords);
    

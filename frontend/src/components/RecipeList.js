@@ -1,5 +1,6 @@
 //DEPENDECIES
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 //CSS
 import '../css/General.css';
@@ -9,6 +10,7 @@ const RecipeList =(props)=>{
    
     return(
         <>
+                                 
             <div className = 'list-container'>
                 {
                     props.currentRecords.map(list => (
@@ -17,9 +19,9 @@ const RecipeList =(props)=>{
                                 <img src = {list.image}/>
                                 <h5>{list.label}</h5>
                                 <div>
-                                    <button>View</button>
-                                    <button>Add To Favorites</button>
-                                    <button>Remove From Favorites</button>
+                                    <Link to ='/viewRecipePage' state = {{list}}>
+                                        <button>View</button>
+                                    </Link>
                                 </div>
                                 <div>
                                     <label><small className='color-green'>Source</small></label>

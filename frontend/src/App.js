@@ -3,6 +3,7 @@ import {Routes,Route} from 'react-router';
 //PAGES
 import HomePage from './pages/HomePage.js';
 import AboutPage from './pages/AboutPage.js';
+import ViewRecipePage from './pages/ViewRecipePage.js';
 
 const App =()=>{
   return(
@@ -10,6 +11,7 @@ const App =()=>{
      <Routes>
         <Route path='/' element={<HomePage/>}/>
         <Route path ='/aboutPage' element ={<AboutPage/>}/>
+        <Route path ='/viewRecipePage' element = {<ViewRecipePage/>}/>
      </Routes>
     </>
   )

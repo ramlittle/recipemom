@@ -1,0 +1,10 @@
+header{
+    height: 15vh;
+    background-color: dodgerblue;    
+    display: flex;
+    flex-direction: row;
+    
+}
+header a{
+    color:white;
+}

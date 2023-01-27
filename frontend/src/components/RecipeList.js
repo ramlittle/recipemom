@@ -17,10 +17,16 @@ const RecipeList =(props)=>{
                                 <img src = {list.image}/>
                                 <h5>{list.label}</h5>
                                 <div>
+                                    <button>View</button>
+                                    <button>Add To Favorites</button>
+                                    <button>Remove From Favorites</button>
+                                </div>
+                                <div>
                                     <label><small className='color-green'>Source</small></label>
                                     <label>
                                         <a href = {list.url}
                                             target='_blank'
+                                            className='link'
                                         >{list.source}</a>
                                     </label>
                                 </div>

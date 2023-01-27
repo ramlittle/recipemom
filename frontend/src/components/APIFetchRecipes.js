@@ -4,6 +4,9 @@ import axios from 'axios';
 //COMPONENTS
 import RecipeList from './RecipeList.js';
 import Pagination from './Pagination.js';
+
+//CSS
+import '../css/APIFetchRecipes.css';
 const APIFetchRecipes =()=>{
   //FETCH DATA using axios
   const [data, setData] = useState([]);

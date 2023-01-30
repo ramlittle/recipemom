@@ -32,24 +32,9 @@ router.post('/signUp', async ( request, response ) => {
   
  
 });
-// Add new User
-router.post('/addUser', async( request, response ) => {
-    try{
-        // const hashedPassword = await bcrypt.hash( request.body.password);
-        let addUser = new User(
-            {
-                ...request.body,
-            }
-        );
-        addUser.save().then( result => {
-            response.send({ status: "New User posted" });
-        });
-    }catch(error){
-        response.status(500).send({status: 'server error'})
-    }
-});
 
-//login
+
+// login
 router.post('/login', ( request, response ) => {
     try{
 
@@ -58,13 +43,12 @@ router.post('/login', ( request, response ) => {
                 if( match ){
                     // Autheticated, valid email and password
                     response.send({
-                        status: "Valid crendentials really",
+                        status: "Valid crendentials",
                         id: result._id,
                         firstName: result.firstName,
                         lastName: result.lastName,
                         email: result.email,
-                        pictureLink: result.pictureLink,
-                        password: result.password
+                        pictureLink: result.pictureLink
                     });
                 }else{
                     response.send({

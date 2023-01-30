@@ -91,3 +91,23 @@
     margin-right:100px;
     margin-left: 200px;
 }
+
+.add-to-favorites-btn{
+    background-color:maroon;
+    padding: 20px;
+    color: white;
+    border-radius: 50%;
+}
+.add-to-favorites-btn:hover{
+    background-color:green;
+}
+
+.remove-from-favorites-btn{
+    background-color:maroon;
+    padding: 20px;
+    color: white;
+    border-radius: 50%;
+}
+.remove-from-favorites-btn:hover{
+    background-color:red;
+}

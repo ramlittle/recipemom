@@ -3,6 +3,7 @@ footer{
     background-color:black;
     color:white;
     display:flex;
+    flex-direction:column;
     align-items: center;
     justify-content: center;
 }
@@ -12,4 +13,12 @@ footer a{
 }
 footer a:hover{
     color:goldenrod;
+}
+.ramlittle-logo{
+    color: goldenrod;
+    padding: 5px;
+}
+.ramlittle-logo:hover{
+    color: white;
+    text-decoration: underline;
 }

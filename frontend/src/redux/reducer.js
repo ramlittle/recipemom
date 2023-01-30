@@ -1,15 +1,18 @@
 const initialState={
-    users:[]
+    users:[],
+    favorites:[]
 };
 
 const reducer =(state=initialState, action)=>{
    switch(action.type){
     case 'POPULATE_USERS':
         return {...state,users:action.payload.users}
-    case 'DELETE_USER':
+    case 'POPULATE_FAVORITES':
+        return {...state,favorites:action.payload.favorites}
+    case 'DELETE_FAVORITE':
         return{
             ...state,
-            mentors: state.users.filter(emergency=>emergency._id !==action.payload.id)
+            mentors: state.favorites.filter(list=>list._id !==action.payload.id)
         }
     default:
         return state;

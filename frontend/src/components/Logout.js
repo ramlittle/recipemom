@@ -11,6 +11,7 @@ const Logout=()=>{
             localStorage.removeItem('userFirstName');
             localStorage.removeItem('userLastName');
             localStorage.removeItem('userEmail');
+            localStorage.removeItem('userPicture');
             navigate('/loginPage');
         }
 

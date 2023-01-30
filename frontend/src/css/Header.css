@@ -1,9 +1,10 @@
 header{
-    height: 15vh;
+    height: 10vh;
     background-color: dodgerblue;    
     display: flex;
     flex-direction: row;
-    
+    padding: 10px;
+    color:white;
 }
 header a{
     color:white;

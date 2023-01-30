@@ -1,10 +1,8 @@
 const mongoose = require('mongoose');
 
 const FavoriteSchema = new mongoose.Schema({
-    userID:{type:mongoose.Schema.Types.ObjectId,ref:'User'},
-    recipeID:[
-        {type:mongoose.Schema.Types.ObjectId,ref:'Recipe'}
-    ]
+    userID:String,
+    recipeID:String
 });
 
 module.exports=mongoose.model('Favorite',FavoriteSchema);

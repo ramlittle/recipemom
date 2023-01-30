@@ -26,9 +26,8 @@ const ViewRecipePage =()=>{
     const location = useLocation();
     const viewedRecipe = location.state.list;
         
-    console.log(viewedRecipe,'item from view recipe')
     console.log('showing userID',userLoggedIn)
-    console.log('showing recipeID',viewedRecipe.uri)
+    console.log(viewedRecipe,'item from view recipe')
 
     //HANDLER Add to Favorites
     const addToFavorite=(e)=>{
@@ -38,7 +37,7 @@ const ViewRecipePage =()=>{
             url: 'http://localhost:8080/api/v1/favorites/addFavorite',
             data: {
               userID:userLoggedIn,
-              recipeID:viewedRecipe.uri,
+              recipe:viewedRecipe,
             },
           };
         

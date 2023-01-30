@@ -36,6 +36,7 @@ const ViewRecipePage =()=>{
                 <div className='head'>
                     <div className='logo-container'>
                         <img src={RecipeMomLogo}/>
+                        <Link to='/' className='return-link'>Return</Link>
                     </div>
                     <div>
                         <div><img src={viewedRecipe.image}/></div>

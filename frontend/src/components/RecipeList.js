@@ -22,7 +22,7 @@ const RecipeList =(props)=>{
                                 <h5>{list.label}</h5>
                                 <div>
                                     <Link to ='/viewRecipePage' state = {{list}}>
-                                        <button>View</button>
+                                        <button className='view-btn'>View</button>
                                     </Link>
                                 </div>
                                 <div>

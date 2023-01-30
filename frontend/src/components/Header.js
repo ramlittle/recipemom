@@ -32,8 +32,8 @@ const Header =()=>{
                 !isLoggedin?
                 (
                 <div className='user-login-and-signup'>
-                    <div className='sign-up-link'><Link to ='/signUpPage'><a href=''>Sign Up</a></Link></div>
-                    <div className='login-link'><Link to ='/loginPage'><a href=''>Login</a></Link></div>
+                    <Link to ='/signUpPage'><a href=''>Sign Up</a></Link>
+                    <Link to ='/loginPage'><a href=''>Login</a></Link>
                 </div>
                 ):(
                 <div className='user-login-details'>

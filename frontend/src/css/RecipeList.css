@@ -34,22 +34,38 @@
     color:white;
     border-radius: 5px;
     padding:2px;
+    margin:5px;
 }
 .color-blue{
     background-color:blue;
     color:white;
     border-radius: 5px;
     padding:2px;
+    margin:5px;
 }
 .color-red{
     background-color:red;
     color:white;
     border-radius: 5px;
     padding:2px;
+    margin:5px;
 }
 .color-brown{
     background-color:brown;
     color:white;
     border-radius: 5px;
     padding:2px;
+    margin:5px;
+}
+.view-btn{
+    background-color:dodgerblue;
+    color:white;
+    padding:5px;
+    text-decoration: none;
+    margin:5px;
+    border-radius:5px;
+}
+.view-btn:hover{
+    background-color:goldenrod;
+    color:white;
 }

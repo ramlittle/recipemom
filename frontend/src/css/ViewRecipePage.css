@@ -11,47 +11,63 @@
 .logo-container{
     height: 200px;
     width:300px;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
 }
 .head > div{
     margin:10px;
 }
-
+.return-link{
+    color:white;
+    background-color:goldenrod;
+}
+.return-link:hover{
+    background-color: dodgerblue;
+    color:white;
+}
 /* colors */
 .color-green{
     background-color: green;
     color: white;
     padding:5px;
     border-radius: 5px;
+    margin:5px;
 }
 .color-yellow{
     background-color: yellow;
     color: black;
     padding:5px;
     border-radius: 5px;
+    margin:5px;
 }
 .color-violet{
     background-color: violet;
     color: white;
     padding:5px;
     border-radius: 5px;
+    margin:5px;
 }
 .color-orange{
     background-color: orange;
     color: white;
     padding:5px;
     border-radius: 5px;
+    margin:5px;
 }
 .color-goldenrod{
     background-color: goldenrod;
     color: white;
     padding:5px;
     border-radius: 5px;
+    margin:5px;
 }
 .color-dodgerblue{
     background-color: dodgerblue;
     color: white;
     padding:5px;
     border-radius: 5px;
+    margin:5px;
 }
 
 .body{

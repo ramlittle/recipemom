@@ -1,6 +1,7 @@
 //DEPENDECIES
 import { useLocation} from 'react-router';
 import {Link, useNavigate} from 'react-router-dom';
+import axios from 'axios';
 
 //COMPONENTS
 import Header from '../components/Header.js';
@@ -26,7 +27,31 @@ const ViewRecipePage =()=>{
     const viewedRecipe = location.state.list;
         
     console.log(viewedRecipe,'item from view recipe')
+    console.log('showing userID',userLoggedIn)
+    console.log('showing recipeID',viewedRecipe.uri)
 
+    //HANDLER Add to Favorites
+    const addToFavorite=(e)=>{
+        e.preventDefault();
+        const configuration = {
+            method: 'post',
+            url: 'http://localhost:8080/api/v1/favorites/addFavorite',
+            data: {
+              userID:userLoggedIn,
+              recipeID:viewedRecipe.uri,
+            },
+          };
+        
+          // make the API call
+          axios(configuration)
+            .then((result) => {
+              alert(result.data.status);
+              window.location.reload(false);
+            })
+            .catch((error) => {
+              alert(error.response.data.status);
+            }); 
+        }
 
     
     return (
@@ -87,6 +112,9 @@ const ViewRecipePage =()=>{
                             <label className='color-dodgerblue'>Weight</label>
                             <label>{(viewedRecipe.totalWeight).toFixed(2)} grams</label>
                         </div>
+                    </div>
+                    <div>
+                        <button onClick={addToFavorite}>Add to Favorites</button>
                     </div>
                 </div>
 

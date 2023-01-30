@@ -43,7 +43,7 @@ const APIFetchRecipes =()=>{
   // User is currently on this page
   const [currentPage, setCurrentPage] = useState(1);
   // No of Records to be displayed on each page   
-  const [recordsPerPage] = useState(3);
+  const [recordsPerPage] = useState(4);
 
   //indices of first and last record
   const indexOfLastRecord = currentPage * recordsPerPage;

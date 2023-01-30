@@ -1,5 +1,6 @@
 //DEPENDECIES
-import { useLocation,useNavigate } from 'react-router';
+import { useLocation} from 'react-router';
+import {Link, useNavigate} from 'react-router-dom';
 
 //COMPONENTS
 import Header from '../components/Header.js';
@@ -12,10 +13,22 @@ import '../css/ViewRecipePage.css';
 //IMAGES
 import RecipeMomLogo from '../images/recipemomlogo.gif';
 const ViewRecipePage =()=>{
+    const navigate = useNavigate();
+    //get UserLoggedIn storage
+    const userLoggedIn=localStorage.getItem('userId');
+     // If user is not logged in redirect to log in page
+     if( userLoggedIn===null ) {
+        navigate('/loginPage');
+    }
+
     //LOCATOR
     const location = useLocation();
     const viewedRecipe = location.state.list;
+        
     console.log(viewedRecipe,'item from view recipe')
+
+
+    
     return (
         <>
             <Header/>
@@ -73,7 +86,6 @@ const ViewRecipePage =()=>{
                             <label className='color-dodgerblue'>Weight</label>
                             <label>{(viewedRecipe.totalWeight).toFixed(2)} grams</label>
                         </div>
-
                     </div>
                 </div>
 

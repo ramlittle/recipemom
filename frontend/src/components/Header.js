@@ -13,7 +13,7 @@ const Header =()=>{
     const userFirstName=localStorage.getItem('userFirstName');
     const userLastName = localStorage.getItem('userLastName');
     const userEmail=localStorage.getItem('userEmail'); 
-
+    const mailto=`mailto:${userEmail}`;
     //check login
     const [isLoggedin, setIsLoggedin] = useState(false);
     function checkLogin(){
@@ -28,31 +28,25 @@ const Header =()=>{
     },[])
     return(
         <header>
-            {!isLoggedin?
-            (
-            <div className='user-login-and-signup'>
-                <div className='sign-up-link'><Link to ='/signUpPage'><a href=''>Sign Up</a></Link></div>
-                <div className='login-link'><Link to ='/loginPage'><a href=''>Login</a></Link></div>
-            </div>
-                
-
-            ):(
-            <div className='user-login-details'>
-            <a href={userPicture} title='view image' target='_blank'>
-                <img src={userPicture}/>
-            </a> 
-                Welcome <strong>{userFirstName} {userLastName} </strong> 
-                {userEmail} 
-            <a href=''>Favorites</a>
-            <Logout/>
-            </div>
-            
-            )
-                
-       
-            
-            
-        }
+            {
+                !isLoggedin?
+                (
+                <div className='user-login-and-signup'>
+                    <div className='sign-up-link'><Link to ='/signUpPage'><a href=''>Sign Up</a></Link></div>
+                    <div className='login-link'><Link to ='/loginPage'><a href=''>Login</a></Link></div>
+                </div>
+                ):(
+                <div className='user-login-details'>
+                    <a href={userPicture} title='view image' target='_blank'>
+                        <img src={userPicture}/>
+                    </a> Welcome,
+                    <strong> {userFirstName} {userLastName} </strong> 
+                    <a href={mailto} title='send email'> {userEmail} </a>
+                    <a href='' title='see favorites'>Favorites</a>
+                    <Logout/>
+                </div>
+                ) 
+            }
         </header>
     )
 }

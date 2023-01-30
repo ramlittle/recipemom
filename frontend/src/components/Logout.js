@@ -1,5 +1,7 @@
+//DEPENDECIES
 import {Link, useNavigate} from 'react-router-dom';
-
+//CSS
+import '../css/Logout.css';
 const Logout=()=>{
     const navigate=useNavigate();
     const onLogout = () => {
@@ -19,7 +21,7 @@ const Logout=()=>{
     };
     return(
         <>
-            <button onClickCapture={onLogout}>Logout</button>
+            <button onClickCapture={onLogout} className='logout-btn'>Logout</button>
         </>
     )
 }

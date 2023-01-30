@@ -51,3 +51,6 @@ form button:hover{
     background-color: goldenrod;
     color:white;
 }
+.error-message{
+    color:red;
+}

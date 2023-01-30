@@ -15,7 +15,9 @@ server.use(bodyParser.json());
 server.use(helmet());
 
 //ROUTES
-const RecipeRouter=require('./routes/recipes');
+// const RecipeRouter=require('./routes/recipes');
+const UserRouter=require('./routes/users');
+const FavoriteRouter=require('./routes/favorites');
 
 //DEPRECATION WARNING SOLN
 mongoose.set('strictQuery',false)
@@ -30,7 +32,9 @@ server.get('/',(request,response)=>{
 })
 
 //ENDPOINTS
-server.use('/api/recipes/v2',RecipeRouter)
+// server.use('/api/recipes/v2',RecipeRouter)
+server.use('/api/v1/users', UserRouter );
+server.use('/api/v1/favorites', FavoriteRouter );
 
 // server.listen(port,()=>{
 //     console.log(`server running on port ${port}`)

@@ -41,7 +41,7 @@ function LoginPage() {
     //userId is the container named for the user Details in local Storage
     const userLoggedIn=localStorage.getItem('userId');//obtain what is in localStorage
     if(userLoggedIn!==null){
-        navigate('/adminPage');
+        navigate('/');
     }
 
     const login = (e) => {
@@ -64,10 +64,11 @@ function LoginPage() {
                 localStorage.setItem('userId',result.data.id);
                 localStorage.setItem('userFirstName',result.data.firstName);
                 localStorage.setItem('userLastName',result.data.lastName);
-                localStorage.setItem('userEmail',result.data.email)
-                navigate('/homePage')
+                localStorage.setItem('userEmail',result.data.email);
+                localStorage.setItem('userPicture',result.data.pictureLink);
+                navigate('/')
             }else{
-                setErrorMessage('Wrong Username or Password');
+                setErrorMessage('Wrong Email or Password');
             }
         })
     }
@@ -133,7 +134,7 @@ function LoginPage() {
                                 </td>
                             </tr>
                             <tr>
-                                <td>{errorMessage}</td>
+                                <td className='error-message'>{errorMessage}</td>
                                 <td colspan='2'><button type="submit" >Login</button></td>
                             </tr>
 
@@ -148,7 +149,7 @@ function LoginPage() {
                         <h5>Don't have an account?</h5>
                     </div>
                     <div className='two'>
-                        <div><Link className='links' to ='/signUp'>Sign Up Here</Link></div>
+                        <div><Link className='links' to ='/signUpPage'>Sign Up Here</Link></div>
                         <div><Link className='links'to='/'>Return Home</Link></div>
                     </div>
                     <div>

@@ -3,7 +3,7 @@ import '../css/Footer.css';
 const Footer=()=>{
     return(
         <footer>
-            <div>All Rights Reserved</div>
+            <div>All Rights Reserved <a href=''>Recipemom</a></div>
         </footer>
     )
 }

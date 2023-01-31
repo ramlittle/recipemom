@@ -118,13 +118,13 @@ const ViewRecipePage =()=>{
             }
        })
       
-        const confirmBox=window.confirm('WARNING: This will delete the available Slot');
+        const confirmBox=window.confirm('WARNING: This will be removed from your favorite list');
             if(confirmBox===true){
                 axios.delete(`http://localhost:8080/api/v1/favorites/${toDeleteId}`)
                 .then(res =>{
                     if( typeof res.data === 'object' ){
                         dispatch({
-                            type:'DELETE_BOOKING',
+                            type:'DELETE_FAVORITE',
                             payload:{id:toDeleteId}
                         })
                     }

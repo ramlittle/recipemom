@@ -48,24 +48,27 @@ const FavoritesPage =()=>{
     console.log('all faves',favorites)
     const favoritesOfUser = favorites.filter(favorite=>{
         if (userLoggedIn === favorite.userID){
-            return favorite;
+            return favorite.recipe;
         }
     })
-    console.log('faves of current user logged in',favoritesOfUser)
-
-
-
+    const favoriteRecipesOfUser=favoritesOfUser.map(favorite=>{
+        return favorite.recipe;
+    })
+    console.log("favoritesOfUser", favoriteRecipesOfUser)
     return(
         <>
             <Header/>
                 <div className='favorites-page-container'>
                     <div className = 'favorites-list-container'>
                     <FavoritesList 
+                        favoriteRecipesOfUser={favoriteRecipesOfUser}
                         favoritesOfUser={favoritesOfUser}
                     />
                     </div>
                     <div className='favorites-image-container'>
+                        <h4>Showing {favoriteRecipesOfUser.length} Favorite Recipes</h4>
                         <img src={Favorites}/>
+
                     </div>
                 </div>
 

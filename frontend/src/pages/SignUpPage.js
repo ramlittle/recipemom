@@ -19,7 +19,6 @@ const SignUpPage =()=> {
     const [password,setPassword]=useState();
     const [confirmPassword,setConfirmPassword]=useState();
     const [showPassword,setShowPassword]=useState('password');
-    const [isAdmin,setIsAdmin]=useState(false);
     const [pictureLink,setPictureLink]=useState();
     const [errorMessage,setErrorMessage]=useState();
 

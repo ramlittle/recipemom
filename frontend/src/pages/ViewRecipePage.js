@@ -40,8 +40,11 @@ const ViewRecipePage =()=>{
 
     console.log('Now I have all favorited recipes',favorites);
     //GET ALL RECIPE IDs
+    // const allRecipeIDs = favorites.map(favorite=>{
+    //     return favorite.recipe.uri;
+    // })
     const allRecipeIDs = favorites.map(favorite=>{
-        return favorite.recipe.uri;
+        return {favoriteUserID:favorite.userID,favoriteURI:favorite.recipe.uri};
     })
 
     const allFavoriteIDs = favorites.map(favorite=>{
@@ -136,7 +139,9 @@ const ViewRecipePage =()=>{
         //map all favorites recipeID here
         let counter=0;
         allRecipeIDs.map(recipeID=>{
-            if(viewedRecipe.uri === recipeID){
+            //here comparing the current viewed recipe if equal to the ones on the list of favorites
+            //while taking a look at the current user logged in
+            if(viewedRecipe.uri === recipeID.favoriteURI && userLoggedIn === recipeID.favoriteUserID ){
                 counter++;
             }
         })

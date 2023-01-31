@@ -1,0 +1,18 @@
+.favorites-page-container{
+    display:flex;
+    width:100%;
+    border:1px solid red;
+    height:100vh;
+}
+.favorites-list-container{
+    width: 60%;
+    display:flex;
+    flex-direction:column;
+    border:1px solid blue;
+}
+.favorites-image-container{
+    width: 40%;
+    display:flex;
+    flex-direction:column;
+    border:1px solid green;
+}

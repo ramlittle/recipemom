@@ -42,7 +42,8 @@ const Header =()=>{
                     </a> Welcome,
                     <strong> {userFirstName} {userLastName} </strong> 
                     <a href={mailto} title='send email'> {userEmail} </a>
-                    <a href='' title='see favorites'>Favorites</a>
+                    <Link to ='/' title='go back to home page'>Home</Link>
+                    <Link to ='/favoritesPage' title='see favorites'>My Favorites</Link>
                     <Logout/>
                 </div>
                 ) 
